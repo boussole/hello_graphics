@@ -1,0 +1,1 @@
+add_library(glfw_utils STATIC glfw.c)
