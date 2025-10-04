@@ -1,3 +1,7 @@
+//
+// https://github.com/datenwolf/linmath.h
+//
+
 #ifndef LINMATH_H
 #define LINMATH_H
 
@@ -10,6 +14,11 @@
 #else
 #define LINMATH_H_FUNC static inline
 #endif
+
+LINMATH_H_FUNC float degrees_to_radians(float degrees)
+{
+	return degrees * (M_PI / 180.0);
+}
 
 #define LINMATH_H_DEFINE_VEC(n) \
 typedef float vec##n[n]; \
@@ -65,6 +74,12 @@ LINMATH_H_FUNC void vec##n##_dup(vec##n r, vec##n const src) \
 	int i; \
 	for(i=0; i<n; ++i) \
 		r[i] = src[i]; \
+} \
+LINMATH_H_FUNC void vec##n##_scalar_mul(vec##n r, vec##n const src, float scalar) \
+{ \
+	int i; \
+	for(i=0; i<n; ++i) \
+		r[i] = src[i] * scalar; \
 }
 
 LINMATH_H_DEFINE_VEC(2)

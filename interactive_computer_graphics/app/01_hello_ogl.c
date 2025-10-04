@@ -26,11 +26,6 @@ GLFWwindow* window;
 GLuint vbo = 0;
 GLuint vao = 0;
 
-#if 0
-GLuint program;
-GLuint vs;
-GLuint fs;
-#endif
 struct shader_prog prog;
 GLint pos_location;
 GLint mvp_location;

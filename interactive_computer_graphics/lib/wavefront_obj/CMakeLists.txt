@@ -1,0 +1,1 @@
+add_library(wavefront_obj STATIC wavefront_obj.c)
